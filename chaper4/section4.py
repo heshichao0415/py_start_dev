@@ -149,18 +149,18 @@ range:生成的var量
 # print(list)
 
 #整个练习
-str1 = '千山飞鸟尽'
-str2 = '万径人踪灭'
-str3 = '孤舟远笠翁'
-str4 = '独钓寒江雪'
-verse = [list(str1), list(str2), list(str3), list(str4)]
-print("---- 横版 ----")
-for i in range(4):
-    for j in range(5):
-        if j == 4:
-            print(verse[i][j])
-        else:
-            print(verse[i][j], end=" ")
+# str1 = '千山飞鸟尽'
+# str2 = '万径人踪灭'
+# str3 = '孤舟远笠翁'
+# str4 = '独钓寒江雪'
+# verse = [list(str1), list(str2), list(str3), list(str4)]
+# print("---- 横版 ----")
+# for i in range(4):
+#     for j in range(5):
+#         if j == 4:
+#             print(verse[i][j])
+#         else:
+#             print(verse[i][j], end=" ")
 
 
 
