@@ -209,9 +209,125 @@ functionbody：函数体
 # params = ['蓝山', '卡布奇洛', '摩卡']
 # printcoffee(*params)
 
+"""
+2、**parameter
+这种形式表示接收任意多个类似关键字参数一样显示赋值的实际参数，并将其放到一个字典中
+"""
+#举例
+# def printsign(**sign):
+#     print()
+#     for key,value in sign.items():
+#         print("[" + key + "]的星座是：" + value)
+# # ***********函数调用*************
+# printsign(梦琪='水瓶座', 科比='射手座')
+# printsign(杜何='sb座', 杜何2='2b座', 杜何3='3B座')
+"""
+输出：
+[科比]的星座是：射手座
+[梦琪]的星座是：水瓶座
 
+[杜何2]的星座是：2b座
+[杜何3]的星座是：3B座
+[杜何]的星座是：sb座
+"""
+#如果想要使用一个已存在的字典作为函数的可变参数，可以加“**”
+# dict1 = {'杜何': '2b', '杜何1': '3b', '杜何2': '4b'}
+# printsign(**dict1)
 
+"""
+返回值：
+python中、可以在函数体内使用return语句为函数指定返回值，该返回值可以是任意类型，并且
+无论return语句出现在函数什么位置，只要得到执行，就会直接结束函数的执行
+语法：
+return [value]
+value：可选参数，用于指定要返回的值，可以是一个，也可以是多个，如果return返回的是多个值，那么是一个元组
+"""
+# def fun_checkout(money):
+#     money_old = sum(money)    #计算合计金额
+#     money_new = money_old
+#     if 500 <= money_old < 1000:
+#         money_new = '{:.2f}'.format(money_old * 0.9)  #python中format格式化字符串，{:.2f}-其中.2表示长度为2的精度，f表示float类型
+#     elif 1000 <= money_old <= 2000:
+#         money_new = '{:.2f}'.format(money_old * 0.8)  #“格式限定符”（语法是{}中带:号）、:号后面带填充的字符，只能是一个字符，不指定的话默认是用空格填充
+#     elif 2000 <= money_old <= 3000:
+#         money_new = '{:.2f}'.format(money_old * 0.7)
+#     elif money_old >= 3000:
+#         money_new = '{:.2f}'.format(money_old * 0.6)
+#     return money_old, money_new
+# # ***************函数调用*****************
+# print("\n开始结算..............\n")
+# list_money = []
+# while True:
+#     inmoney = float(input("输入商品金额（输入0代表输入完毕）："))
+#     if int(inmoney) == 0:
+#         break
+#     else:
+#         list_money.append(inmoney)
+# money = fun_checkout(list_money)
+# print("合计金额：", money[0], "应付金额：", money[1])
 
+#变量
+"""
+局部变量：在函数内部定义并使用的变量、只在函数内部有效
+"""
+# def demo():
+#     message = 'l love you'            #局部变量
+#     print("局部变量message=", message)
+# demo()
 
+"""
+全局变量：能作用于函数内外的变量
+1、在函数外定义的变量为全局变量
+2、在函数体内定义，并且使用global关键字修饰后，也就属于全局变量了
+"""
+#函数外定义全局变量
+# message = 'i love you'
+# def demo():
+#     print('函数体内：全局变量为：', message)   #输出：函数体外：全局变量为： i love you
+# demo()
+# print('函数体外：全局变量为：', message)   #输出：函数体外：全局变量为： i love you
 
+#函数体内定义全局变量
+# def demo():
+#     global message
+#     message = 'i love you'
+#     print('函数体内全局变量为：', message)
+# demo()
+# print('函数体外的全局变量为：', message)
 
+#匿名函数
+"""
+匿名函数？？
+指的是没有名字的函数，应用在需要一个函数，但是又不想费神去命名这个函数的场合
+通常情况下，这样的函数只使用一次
+使用lambda表达式创建匿名函数
+语法：
+result = lambda[arg1[arg2,.....gran]]:expression
+参数：
+result：就是调用lambda表达式
+arg1.....：可选参数，用于指定要传递的参数列表，用，分割
+expression：必选参数，用于指定一个实现具体功能的表达式，如果有参数，那么在该表达式中将应用这些参数
+"""
+#例如一个函数如下：
+import math
+# def circlearea(r):
+#     result = math.pi*r*r
+#     return result
+# r = 10
+# print('半径为：', r, '的圆面积为：', circlearea(r))
+# #使用lambda表达式代码如下
+# import math
+# r = 10
+# result = lambda r:math.pi*r*r
+# print('半径为：', r, '的圆面积为：', result(r))
+
+# def test(a, b):
+#     result = a + b
+#     print(result)
+#
+# test(10, 20)
+#使用lambda表达式
+# a = 10
+# b = 20
+# result = lambda a,b:a + b
+# print(result(a, b))
