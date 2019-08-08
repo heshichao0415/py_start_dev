@@ -90,3 +90,142 @@ __init__()方法必须包含一个self参数，并且必须是第一个参数，
 # print("直接访问：", swan.__neck)          #私有属性不能通过实例名访问，出错
 
 #属性（property）
+"""
+在python中，可以通过@property（装饰器）将一个方法转换为属性，从而实现用于计算的属性
+将方法转换为属性后，可以直接通过方法名来访问方法，而不需要在添加一对小括号（）
+"""
+# class Rect:
+#     def __init__(self, width, heigth):
+#         self.width = width
+#         self.height = heigth
+#
+#     @property                      #装饰器
+#     def area(self):
+#         return self.width*self.height
+#
+# a = Rect(800, 600)
+# print("面积为：", a.area)    #a.area   不加装饰器的话就要用a.area()
+
+#通过property装饰的属性不能重新赋值
+# class TVshow:
+#     list_film = ["战狼", "红海行动", "熊出没", "变形记"]
+#     def __init__(self, show):
+#         self.__show = show                 #私有属性
+#
+#     @property
+#     def show(self):
+#         return self.__show
+#
+#     @show.setter               #设置setter方法，让属性可以修改
+#     def show(self, value):
+#         if value in TVshow.list_film:
+#             self.__show = "你选择了《" + value + "》，稍后即将播出"
+#         else:
+#             self.__show = "你点播的电影不存在"
+#
+# tvshow = TVshow("战狼")
+# print("正在播放：《", tvshow.show, "》")
+# print("你可以从", tvshow.list_film, "中选择要点播的电影")
+# tvshow.show = "捉妖记2"    # "红海行动"     修改属性
+# print(tvshow.show)           #获取属性
+
+#继承
+"""
+在面向对象编程中，被继承的类称为父类或者基类，新的类称为子类或派生类
+"""
+# class Fruit:                      #父类
+#     color = "绿色"
+#     def harvest(self, color):
+#         print("水果是：" + color + '的')
+#         print("水果已经收获........")
+#         print("水果原来是:" + Fruit.color + "的！")
+#
+# class Apple(Fruit):                #派生类
+#     color = "红色"
+#     def __init__(self):
+#         print("我是苹果")
+# # ***************调用函数****************
+# apple = Apple()
+# apple.harvest(apple.color)              #调用基类的harvest()方法
+
+#方法重写
+#在派生类中可以对父类的方法进行重写
+# class Fruit:                      #父类
+#     color = "绿色"
+#     def harvest(self, color):
+#         print("水果是：" + color + '的')
+#         print("水果已经收获........")
+#         print("水果原来是:" + Fruit.color + "的！")
+#
+# class Apple(Fruit):                #派生类
+#     color = "红色"
+#     def __init__(self):
+#         print("我是苹果")
+#
+# class Orange(Fruit):
+#     color = "橙色"
+#     def __init__(self):
+#         print("\n我是橘子")
+#     def harvest(self, color):
+#         print("水果是：" + color + '的')
+#         print("橘子已经收获........")
+#         print("水果原来是:" + Fruit.color + "的！")
+# # ***********调用函数************
+# apple = Apple()
+# apple.harvest(apple.color)              #调用基类的harvest()方法
+# orange = Orange()
+# orange.harvest(orange.color)            #重写后的方法进行调用，只对于本派生类生效哦
+
+#派生类中调用基类的__init__()方法
+"""
+在派生类中定义__init__()方法时，不会自动调用基类的__init__()方法
+因此，要让派生类调用基类的__init__()方法时，要进行必要的初始化，需要在派生类中使用super()函数
+"""
+# class Fruit:
+#     def __init__(self, color='绿色'):
+#         self.color = color                #定义类属性
+#
+#     def harvest(self):
+#         print("水果原来是：" + self.color + "的！")
+#
+# class Apple(Fruit):
+#     def __init__(self):
+#         print("我是苹果")
+#         super().__init__()       #调用基类__init__()方法，，没有这行代码是不行的
+#
+# apple = Apple()
+# apple.harvest()
+
+#例子：
+# class Fruit:                                 #基类
+#     def __init__(self, color='绿色'):
+#         Fruit.color = color              #属性
+#
+#     def harvest(self, color):
+#         print("水果是：" + color + "的！")
+#         print("水果已经收获.......")
+#         print("水果原来是：" + Fruit.color + "的！")
+# class Apple(Fruit):
+#     color = "红色"
+#     def __init__(self):
+#         print("我是苹果")
+#         super().__init__()
+# class Sapodilla(Fruit):
+#     def __init__(self, color):
+#         print("\n我是人参果")
+#         super().__init__(color)
+#     #重写harvest()方法：
+#     def harvest(self, color):
+#         print("人参果是：" + color + "的！")
+#         print("人参果已经收获.......")
+#         print("人参果原来是：" + Fruit.color + "的！")
+# # ***********函数调用***********
+# apple = Apple()
+# apple.harvest(apple.color)
+# sapodilla = Sapodilla("白色")
+# sapodilla.harvest("黄金色带紫色条纹")
+
+
+
+
+
