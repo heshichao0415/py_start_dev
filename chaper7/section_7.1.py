@@ -226,6 +226,18 @@ __init__()方法必须包含一个self参数，并且必须是第一个参数，
 # sapodilla.harvest("黄金色带紫色条纹")
 
 
-
-
+# class Fruit:
+#     def __init__(self, color):
+#         self.color = color
+#     # @property
+#     def apple(self):
+#         print("苹果的颜色是：", self.color)
+# class Apple(Fruit):
+#     def __init__(self):
+#         print("我是橘子")
+#         super().__init__('白色')
+#
+# if __name__ == "__main__":
+#     a = Apple()
+#     a.apple()
 
