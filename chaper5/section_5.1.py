@@ -162,4 +162,19 @@ bytes表示二进制数据
 # print(d)    #白衣渡江
 
 
+class Mytest():
+    def __init__(self, **kwargs):
+        self.kwargs = kwargs
+        self.name = '省帅'
+        self.age = 25
+        self.height = 1.71
+        self.weight = 56
 
+    def BIM(self):
+        bim = self.weight / (self.height * self.height)
+        if bim > 18.5:
+            print("姓名：" + self.name, "\nBIM正常，值为：", bim)
+        else:
+            print("不正常")
+a = Mytest()
+a.BIM()

@@ -113,13 +113,13 @@ findall()方法
 语法：
 re.findall(pattern, string, [flags])
 """
-# import re
-# pattern = r'mr_\w+'
-# string = 'MR_SHOP mr_shop'
-# match = re.findall(pattern, string, flags=re.I)   #不区分大小写
-# match1 = re.findall(pattern, string)
-# print(match)     #['MR_SHOP', 'mr_shop']
-# print(match1)    #['mr_shop']
+import re
+pattern = r'mr_.+'  #r'mr_\w+'  #r'mr_.*' #r'mr_\w*'
+string = 'MR_SHOP mr_shop'
+match = re.findall(pattern, string, flags=re.I)   #不区分大小写
+match1 = re.findall(pattern, string)
+print(match)     #['MR_SHOP', 'mr_shop']
+print(match1)    #['mr_shop']
 
 # import re
 # pattern = r'([1-9]{1,3}(\.[0-9]{1,3}){3})'

@@ -324,7 +324,7 @@ import math
 # def test(a, b):
 #     result = a + b
 #     print(result)
-#
+
 # test(10, 20)
 #使用lambda表达式
 # a = 10

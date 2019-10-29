@@ -106,15 +106,15 @@ requests.options()          OPTIONS请求
 #网络超时
 #在访问一个网页时，如果该网页长时间未响应，系统就会判断该网页超时
 #代码模拟一个网络超时请求
-# import requests
-# #循环发送请求50次
-# for a in range(0, 50):
-#     try:
-#         #设置超时时间为0.5秒
-#         response = requests.get('https://www.baidu.com', timeout=0.05)
-#         print(response.status_code)
-#     except Exception as a:                 #捕获异常
-#         print("异常" + str(a))             #打印异常信息
+import requests
+#循环发送请求50次
+for a in range(0, 50):
+    try:
+        #设置超时时间为0.5秒
+        response = requests.get('https://www.baidu.com', timeout=0.15)
+        print(response.status_code)
+    except Exception as a:                 #捕获异常
+        print("异常" + str(a))             #打印异常信息
 #打印异常信息为： 异常HTTPSConnectionPool(host='www.baidu.com', port=443): Read timed out. (read timeout=0.05)
 
 # import requests

@@ -241,3 +241,22 @@ __init__()方法必须包含一个self参数，并且必须是第一个参数，
 #     a = Apple()
 #     a.apple()
 
+
+# class Mytest(object):
+#     def __init__(self, name, age, weight, height):
+#         self.name = name
+#         self.age = age
+#         self.weight = float(weight)
+#         self.height = float(height)
+#
+#     def BIM(self):
+#         BIM = self.weight / (self.height * self.height)
+#         if BIM > 18.5:
+#             print("姓名:" + self.name, '\n年龄：' + self.age, "\nBIM指数为：" + str(BIM), "\n结果正常")
+#         else:
+#             print("姓名:" + self.name, '\n年龄：' + self.age, "\nBIM指数为：" + str(BIM) + "\n结果不正常,体质偏低哦，需要加强营养")
+#
+# a = Mytest('省帅', '27', '52', '1.70')
+# a.BIM()
+
+

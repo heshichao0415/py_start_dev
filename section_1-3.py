@@ -125,7 +125,7 @@
 # else:
 #     print('输入错误！请按提示输入')
 
-import random
+# import random
 # i = 0
 # while i >= 0:
 #     a = int(input('请输入一个1~10之间的任意一个数'))
@@ -158,6 +158,7 @@ import random
 #         print('你的分数为：1分')
 #         continue
 
+# import random
 # print('-----------------------10086查询功能----------------------')
 # print('输入1，查询当前余额')
 # print('输入2，查询当前剩余流量')
@@ -182,5 +183,33 @@ import random
 #         print('输入有误，请输入正确的查询代码！')
 #         continue
 
+# import redis
+#
+# pool = redis.ConnectionPool(host='127.0.0.1', port='6379', decode_responses=True, db=0)
+# r = redis.Redis(connection_pool=pool)
+# print('ok')
 
-
+# r.lpush('name', 1,2,3,4,5,6,7,8,9,0)
+# a = r.lrange('name', 0, -1)
+# module_list = []
+# for i in range(5):
+#         modules = r.rpop('name')  # 删除并返回列表最后一个值，当列表不存在时返回None
+#         if modules is not None:
+#             module_list.append(modules)
+# print(module_list)
+# print(a)
+# import time
+# a = time.strftime("%Y-%m-%d %H:%M:%S")  #获取当前时间，并显示为易懂格式
+# print(a)
+# c = time.time()
+# print(c)
+# d = time.localtime(time.time())
+# print(d)
+import json
+a = {'a': 1, 'b': 2}
+print(type(a))
+b = json.dumps(a)
+print(type(b))
+print(b)
+c = json.loads(b)
+print(type(c))

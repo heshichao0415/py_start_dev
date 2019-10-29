@@ -19,6 +19,11 @@
 # list = [1,2,3]
 # del list                   #用del删除列表
 # print(list)
+a = [1,2,3]
+a.append(4)
+print(a)
+a.extend(['a', 'b', 'c'])
+print(a)
 
 # import datetime
 # now = datetime.datetime.now()         #获取当前时间
@@ -62,7 +67,11 @@ extend(), 将一个列表中的值，全部添加到另外一个列表
 # list = ['a', 'b', 'c', 'd']
 # list.insert(2, 5)                  #在c前面添加5
 # print(list)
-
+# a = [1,2,3]
+# a.append(4)
+# print(a)
+# a.extend(['a', 'b', 'c'])    #extend增加多个元素
+# print(a)
 """
 修改列表的元素、直接通过下标修改
 """
@@ -101,8 +110,9 @@ obj:要查找的对象
 sum()函数？？
 用于统计数值列表中各元素的和
 """
-# a = [1,10,20,44,21,41,21,43]
+# a = [1, 10, 20, 44, 21, 41, 21, 43]
 # num = sum(a)
+# print(len(a))           #计算长度
 # print(num)              #总和201， sum()只针对数字列表
 
 """
@@ -117,7 +127,7 @@ key:例如在排序的时候不区分大小写可设置为key=str.lower
 # list.sort(reverse=True)
 # print(list)
 # a = sorted(list, reverse=True)
-# print(list)
+# print(a)
 
 """
 列表推导式
@@ -128,12 +138,12 @@ range:生成的var量
 """
 # import random
 # list = [random.randint(1, 50) for i in range(1, 11)]
-# print("生成的随机数为：", list)
+# print("生成的随机数为：", list)            #随机生成1-50之间的10个元素的列表
 
-# a = [10, 30, 60, 25]
-# b = [float(n*0.5) for n in a]
-# print('原价为：', a)
-# print('打五折后的价格为：', b)
+a = [10, 30, 60, 25]
+b = [float(n*0.5) for n in a]
+print('原价为：', a)
+print('打五折后的价格为：', b)
 #不一一举例了 大概就是这样的情况哦
 
 """
@@ -145,7 +155,7 @@ range:生成的var量
 # for i in range(4):
 #     list.append([])
 #     for j in range(5):
-#         list[i].append(j)        创建二维列表
+#         list[i].append(j)        #创建二维列表
 # print(list)
 
 #整个练习
@@ -162,6 +172,28 @@ range:生成的var量
 #         else:
 #             print(verse[i][j], end=" ")
 
+#MD5加密算法
+# import hashlib
+# time = '156897156123'
+# m = hashlib.md5()
+# b = time.encode(encoding='utf-8')
+# m.update(b)
+# str_md5 = m.hexdigest()
+# print('加密后的md5为：', str_md5)
+#
+# import time
+# time = time.time()
+# print(time)
 
+#列表切片，可以从指定的序列中，随机的截取指定长度的片断，不作原地修改
+# import random
+# a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# c = random.sample(a, 3)                     #随机3个列表元素
+# print(c)
 
+#random.choice()可以从任何序列，比如list列表中，选取一个随机的元素返回，可以用于字符串、列表、元组等
 
+# import random
+# a = 'safasfasffa'
+# c = random.choice(a)             #随机一个元素出来
+# print(c)
